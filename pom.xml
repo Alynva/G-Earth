@@ -15,6 +15,7 @@
 
     <modules>
         <module>G-Earth</module>
+        <module>G-Wasm</module>
     </modules>
 
     <build>

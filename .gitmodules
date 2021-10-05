@@ -1,0 +1,4 @@
+[submodule "G-Wasm"]
+	path = G-Wasm
+	url = https://github.com/sirjonasxx/G-Wasm
+	branch = minimal
