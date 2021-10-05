@@ -228,10 +228,14 @@
 
 
 
-
         <dependency>
             <groupId>G-Earth</groupId>
             <artifactId>G-Wasm</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>G-Earth</groupId>
+            <artifactId>G-Extension</artifactId>
             <version>1.0</version>
         </dependency>
 

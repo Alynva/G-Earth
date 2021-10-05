@@ -1,0 +1,91 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>G-Extension</artifactId>
+
+  <packaging>jar</packaging>
+
+  <version>1.0</version>
+
+  <properties>
+    <javafx.version>17</javafx.version>
+  </properties>
+
+  <parent>
+    <groupId>G-Earth</groupId>
+    <artifactId>G-Earth-Parent</artifactId>
+    <version>1.5.1</version>
+  </parent>
+  
+  <build>
+    <plugins>
+      <!-- this builds a non-standalone JAR file -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.1.2</version>
+        <configuration>
+          <outputDirectory>${project.build.directory}/bin</outputDirectory>
+          <archive>
+            <manifest>
+              <addDefaultEntries>false</addDefaultEntries>
+            </manifest>
+            <addMavenDescriptor>false</addMavenDescriptor>
+          </archive>
+          <finalName>G-Earth-Native-Extension</finalName>
+        </configuration>
+      </plugin>
+
+      <!-- global build folder -->
+      <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <version>3.0.0</version>
+        <executions>
+          <execution>
+            <id>copy_files</id>
+            <phase>package</phase>
+            <configuration>
+              <target name="copy G-Earth-Native-Extension.jar to Build folder">
+                <copy file="target/bin/G-Earth-Native-Extension.jar" todir="../Build/" />
+              </target>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>clean_files</id>
+            <phase>clean</phase>
+            <configuration>
+              <target name="clean our own build folder">
+                <delete dir="../Build" includeemptydirs="true" />
+              </target>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+    </plugins>
+  </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-controls</artifactId>
+      <version>${javafx.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-fxml</artifactId>
+      <version>${javafx.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-web</artifactId>
+      <version>${javafx.version}</version>
+    </dependency>
+  </dependencies>
+</project>
