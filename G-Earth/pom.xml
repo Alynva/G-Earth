@@ -11,7 +11,7 @@
     <version>1.5.1</version>
 
     <properties>
-        <javafx.version>1.8</javafx.version>
+        <javafx.version>17</javafx.version>
         <jettyVersion>9.4.41.v20210516</jettyVersion>
     </properties>
 
@@ -144,21 +144,21 @@
 
 
     <dependencies>
-<!--        <dependency>-->
-<!--            <groupId>org.openjfx</groupId>-->
-<!--            <artifactId>javafx-fxml</artifactId>-->
-<!--            <version>${javafx.version}</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.openjfx</groupId>-->
-<!--            <artifactId>javafx-graphics</artifactId>-->
-<!--            <version>${javafx.version}</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.openjfx</groupId>-->
-<!--            <artifactId>javafx-web</artifactId>-->
-<!--            <version>${javafx.version}</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-web</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
